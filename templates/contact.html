@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../static/img/travel/icone travel.png">
+  <title>FAQ</title>
+  <link rel="stylesheet" href="../static/css/contact.css">
+</head>
+<body>
+  <div class="header">
+    <img alt="logo" id="logoo" src="../static/img/travel/travel-logo-275-5824.webp" width="10%" height="7.5%">
+    <h1 class="titre">Votre Agence de Voyage - Explorez le Monde !</h1>
+  </div>
+
+  <div class="container">
+    <a href="/travel"><span class="fermer"><ion-icon name="close"></ion-icon></span></a>
+    <h1>Contactez-nous</h1>
+    <p>Nous sommes là pour vous aider à planifier votre prochaine aventure ! Si vous avez des questions ou des préoccupations, contactez-nous via le formulaire ci-dessous.</p>
+
+    <h1>Questions fréquentes</h1>
+
+    <!-- Questions fréquentes -->
+    <div class="guide-pratique-container">
+      <h2>Guide Pratique pour vos Voyages</h2>
+      <p>Tout ce que vous devez savoir avant de partir en voyage</p>
+      <div class="guide-pratique-conten">
+        <div class="guide-pratique-column">
+          <h3>Informations générales</h3>
+          <!-- Exemples de questions fréquentes -->
+          <div class="question" onclick="toggleReponse('reponse1')">
+            <h3>La monnaie en destination</h3>
+            <div class="reponse" id="reponse1">
+              <p>→ La monnaie dépend de la destination choisie. Consultez les informations spécifiques pour chaque pays sur notre site.</p>
+            </div>
+          </div>
+          <!-- Ajoutez d'autres questions ici -->
+        </div>
+      </div>
+    </div>
+
+    <p class="dancingText">Si vous ne trouvez pas la réponse à votre question, contactez-nous via le formulaire ci-dessous :</p>
+
+    <!-- Formulaire de contact combiné -->
+    <form method="post">
+      <section id="identification">
+        <h2>Identifiez-vous</h2>
+        <label for="nom" class="info-message" onmouseover="defilerMessages('nom')">Nom :</label>
+        <input class="p1" type="text" id="nom" name="nom" required>
+        <br><br>
+        <label for="email" class="info-message" onmouseover="defilerMessages('email')">Email :</label>
+        <input class="p1" type="email" id="email" name="email" required>
+      </section>
+      <br>
+      <section id="probleme">
+        <h2>Décrivez votre problème ou demande</h2>
+        <label for="probleme">Votre demande :</label>
+        <textarea id="probleme" name="probleme" class="p2" required></textarea>
+      </section>
+      <br>
+      <button class="p1" type="submit">Envoyer</button>
+    </form>
+
+    <div class="container">
+      <p>Êtes-vous satisfait ?</p>
+      <div id="feedbackButtons">
+        <button id="satisfiedButton" class="feedbackButton" onclick="sendFeedback('satisfait')">Satisfait ❤️</button>
+        <button id="moderatelySatisfiedButton" class="feedbackButton" onclick="sendFeedback('moyennement satisfait')">Moyennement satisfait 😐</button>
+        <button id="notSatisfiedButton" class="feedbackButton" onclick="sendFeedback('pas satisfait')">Pas satisfait du tout ☹️</button>
+      </div>
+      <div id="thankYouMessage" style="display: none;">Merci pour votre réponse !</div>
+    </div>
+
+    <h2 class="titre"><a href="/avis">Donnez-nous votre avis</a></h2>
+    <br>
+  </div>
+
+  <script src="../static/js/projet.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

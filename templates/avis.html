@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/img/travel/icone travel.png">
+    <title>page Avis</title>
+    <link rel="stylesheet" href="../static/css/contact.css" type="text/css">
+
+
+    <title>Avis</title>
+    <style>
+        .p1{
+    border-radius: 15px;
+    
+    width: 650px;
+    height: 40px;
+    background-color: white;
+    text-align: center;
+    transition: 1.2s ease;
+    margin-top: 3px;
+    padding-top: 7px;
+
+}
+.p1:hover
+{
+    background-color: white;
+    border-radius: 15px;
+    border : black solid 1px;
+    
+}
+#yaya{
+    border-radius: 15px;
+    border : black solid 1px;
+    width: 650px;
+    height: 100px;
+    background-color: rgba(174, 174, 174, 0.735);
+    text-align: center;
+    transition: 1.2s ease;
+
+}
+.p2{
+    border-radius: 15px;
+    
+    width: 650px;
+    height: 40px;
+    background-color: #2095ae;
+    text-align: center;
+    transition: 1.2s ease;
+    margin-top: 3px;
+    padding-top: 7px; 
+}
+.p2:hover{
+    background-color: #0f2454;
+    transition: 0.5s ease-in; /* Changer de couleur au survol */
+}
+
+    </style>
+    
+</head>
+<body>
+    <div class="header">
+        <img  alt="logo" id="logoo" src="../static/img/travel/travel-logo-275-5824.webp" width="10%" height="7.5%" >
+    
+        <h1 class="titre" > Votre Agence de Voyage - Explorez le Monde ! </h1>
+        </div>
+        
+    <div class="container">
+        
+            <a href="/contact"><span class="fermer"> <ion-icon name="close"></ion-icon></span></a> 
+           
+    
+    <h2>Partagez votre avis sur le site</h2>
+    <form method="post" >
+        <br>
+   
+        <label for="nom">Nom :</label><br>
+        <input class="p1" type="text" id="nom" name="nom" required><br><br>
+
+        <label for="prenom">Prénom :</label><br>
+        <input class="p1" type="text" id="prenom" name="prenom" required><br><br>
+
+        <label for="adresse">Adresse postale :</label><br>
+        <input class="p1" type="text" id="adresse" name="adresse" required><br><br>
+
+        <label for="email">Adresse e-mail :</label><br>
+        <input  class="p1" type="email" id="email" name="email" required><br><br>
+
+        <label for="pays">Pays d'origine :</label><br>
+        <input class="p1" type="text" id="pays" name="pays" required><br><br>
+
+        
+        <!--Departement-->
+        <label for="dprt" > Département de domicile </label> <br>
+        
+        <input class="p1" id="p3" list="departement" name="departement" /> <br><br>
+        <datalist class="p1" id="departement" >
+            <option value="Paris">
+            <option value="Seine-saint-Denis">
+            <option value="Hauts-de-Seine">
+            <option value="Val-de-Marne">
+            <option value="Val-d'Oise">
+            <option value="Essonne">
+            <option value="Yvelines">
+            <option value="La Seine-et-Marne">
+        </datalist>
+        
+         <br>
+         <br>
+       <!-- Code Postal -->
+       <label for="code_postal">Code Postal :</label><br>
+       <input class="p1" type="text" id="p4" name="code_postal" readonly><br><br>
+ 
+         <br>
+         <br>
+         <label for="avis">Votre avis :</label><br>
+        <textarea class="p1" id="avis" name="avis" rows="50" cols="50" id="yaya" required></textarea><br><br>
+
+        <input class="p2" type="submit" value="Envoyer">
+    </form>
+
+    </div>
+    
+    
+         
+      
+      
+          
+      
+    
+      <script>
+        document.getElementById('p3').addEventListener('change', function() {
+            var departement = this.value.trim().toLowerCase();
+            var codePostal = document.getElementById('p4');
+        
+            switch (departement) {
+                case 'paris':
+                    codePostal.value = '75';
+                    break;
+                case 'seine-saint-denis':
+                    codePostal.value = '93';
+                    break;
+                case 'hauts-de-seine':
+                    codePostal.value = '92';
+                    break;
+                case 'val-de-marne':
+                    codePostal.value = '94';
+                    break;
+                case 'val-d\'oise':
+                    codePostal.value = '95';
+                    break;
+                case 'essonne':
+                    codePostal.value = '91';
+                    break;
+                case 'yvelines':
+                    codePostal.value = '78';
+                    break;
+                case 'la seine-et-marne':
+                    codePostal.value = '77';
+                    break;
+                default:
+                    codePostal.value = ''; // Remise à zéro du champ si aucun département correspondant
+            }
+        });
+        </script>
+          <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+          <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+          
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="shortcut icon" href="../static/img/travel/icone travel.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/compte.css"/>
+    <title>Inscreption</title>
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fenetre1">
+        <a href="/travel"><span class="fermer"><ion-icon name="close"></ion-icon></span></a> 
+        <div class="forme">
+            <h2>Inscrivez-vous</h2>
+            <form id="registrationForm" method="post">
+                <div class="saisie"> 
+                    <input id="nom" name="nom" type="text" maxlength="15" required>
+                    <label>Nom</label>
+                    <p id="nomError" class="error-message">Veuillez remplir le champ "Nom".</p>
+                </div> 
+                <div class="saisie"> 
+                    <input id="prénom" name="prénom" type="text" maxlength="15" required>
+                    <label>Prénom</label>
+                    <p id="prenomError" class="error-message">Veuillez remplir le champ "Prénom".</p>
+                </div>
+                <div class="saisie"> 
+                    <input id="adresseMail" name="adresse mail" type="email" required>
+                    <label>Adresse mail</label>
+                    <p id="emailError" class="error-message"></p>
+                </div> 
+                <div class="saisie"> 
+                    <input id="motDePasse" name="mot de passe" type="password" required>
+                    <label>Mot De Passe</label>
+                    <p id="passwordError" class="error-message">Veuillez remplir le champ "Mot de passe".</p>
+                </div> 
+                <div class="saisie"> 
+                    <input id="numéro" name="numéro" type="tel" maxlength="10" pattern="\d{10}" required>
+                    <label>Numéro de téléphone</label>
+                    <p id="numeroError" class="error-message"></p>
+                </div> 
+                <button type="submit" class="btn">S'inscrire</button> 
+                <div class="compte">
+                    <p>Vous avez déjà un compte?</p>
+                    <a href="/compte">Se Connecter</a>
+                </div>
+            </form>  
+        </div>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        // Récupération des éléments du formulaire
+        const form = document.getElementById('registrationForm');
+        const numero = document.getElementById('numéro');
+        const numeroError = document.getElementById('numeroError');
+        const email = document.getElementById('adresseMail');
+        const emailError = document.getElementById('emailError');
+
+        // Validation dynamique du numéro de téléphone
+        numero.addEventListener('input', () => {
+            const numeroPattern = /^\d{10}$/; // Seulement 10 chiffres
+            if (numero.value && !numeroPattern.test(numero.value)) {
+                numeroError.style.display = 'block';
+            } else {
+                numeroError.style.display = 'none';
+            }
+        });
+
+        // Validation dynamique de l’adresse email
+        email.addEventListener('input', () => {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Format email
+            if (email.value && !emailPattern.test(email.value)) {
+                emailError.style.display = 'block';
+            } else {
+                emailError.style.display = 'none';
+            }
+        });
+
+        // Validation lors de la soumission du formulaire
+        form.addEventListener('submit', (e) => {
+            const numeroPattern = /^\d{10}$/;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            let isValid = true;
+
+            if (!numeroPattern.test(numero.value)) {
+                numeroError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (!emailPattern.test(email.value)) {
+                emailError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (!isValid) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

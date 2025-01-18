@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../static/img/travel/icone travel.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=poppins:wght@400;500;600&family=Ubuntu:wght@400;500;700&display=swap");
+        body {
+
+
+                /* Styles Généraux */
+
+ font-family: "Ubuntu", Arial, sans-serif;
+ margin:10px;
+ padding: 10px;
+ min-height: 100vh;
+ background-image: url('../static/img/travel/reservation\ arriere.jpg');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position:auto ;
+ margin-left: 33%;
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+        /* .fenetre { */
+            /* position: relative; */
+            /* width: 400px; */
+            /* height: 200px; */
+            /* border: 2px solid rgba(255, 255, 255, 0.5); */
+            /* border-radius: 19px; */
+            /* backdrop-filter: blur(20px); */
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            /* overflow: hidden; */
+            /* background-color: lightgray; */
+        /* } */
+
+        .container .fermer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 45px;
+            height: 45px;
+            background-color: black;
+            font-size: 32px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom-left-radius: 20px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .container {
+            background: transparent; /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            backdrop-filter: blur(20px); /* Adding blur effect */
+            position: relative;
+            z-index: 1;
+            align-items: center; /* Centre le contenu dans le conteneur */
+            justify-content: center;
+
+
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+
+
+
+        }
+
+        input, select {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+
+
+
+        .payment-icons {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Centre verticalement, si besoin */
+    margin-top: 10px;
+}
+
+.payment-icons img {
+    width: 40px;
+    height: auto;
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+        .btn-submit {
+            background: #0f2454;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 85%;
+        }
+
+        .btn-submit:hover {
+            background:  #2095ae;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .flag {
+            display: inline-block;
+            width: 20px;
+            height: 14px;
+            background-size: cover;
+            margin-right: 8px;
+        }
+
+        .card-logo {
+            display: block;
+            width: 50px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <a href="reservation.html"><span class="fermer"> <ion-icon name="close"></ion-icon></span></a>
+
+        <h2>Informations de Contact</h2>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="email@exemple.com" required>
+
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" placeholder="Numéro de téléphone"required>
+
+        <h2>Méthode de Paiement</h2>
+        <div class="payment-icons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+        </div>
+
+        <label for="card-number">Numéro de Carte</label>
+        <input type="text" id="card-number" placeholder="1234 1234 1234 1234"required>
+
+        <label for="expiry">Date d'Expiration</label>
+        <input type="text" id="expiry" placeholder="MM / AA"required>
+
+        <label for="cvc">CVC</label>
+        <input type="text" id="cvc" placeholder="CVC"required>
+
+        <label for="cardholder-name">Nom du Titulaire</label>
+        <input type="text" id="cardholder-name" placeholder="Nom complet sur la carte">
+
+        <label for="billing-country">Adresse de Facturation</label>
+        <select id="billing-country"required>
+            <option value="France">France</option>
+            <option value="Belgium">Belgique</option>
+            <option value="Netherlands">Pays-Bas</option>
+        </select>
+        <input type="text" id="address-line-1" placeholder="Adresse ligne 1"required>
+        <input type="text" id="address-line-2" placeholder="Adresse ligne 2">
+        <input type="text" id="postal-code" placeholder="Code postal"required>
+        <input type="text" id="city" placeholder="Ville"required>
+
+        <button class="btn-submit">Soumettre le Paiement</button>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Initialise l'entrée du téléphone
+    const phoneInputField = document.getElementById("phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        initialCountry: "fr",
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
+    // Ajoute un slash automatiquement pour la date d'expiration
+    document.getElementById("expiry").addEventListener("input", function (event) {
+        let input = event.target.value.replace(/\D/g, ""); // Supprime tout caractère non numérique
+        if (input.length > 2) {
+            input = input.slice(0, 2) + "/" + input.slice(2, 4); // Ajoute un slash après les deux premiers chiffres
+        }
+        event.target.value = input;
+    });
+
+    // Limite les entrées du numéro de carte à 16 chiffres
+    document.getElementById("card-number").addEventListener("input", function (event) {
+        event.target.value = event.target.value.replace(/\D/g, "").slice(0, 16); // Accepte uniquement les chiffres et limite à 16 caractères
+    });
+
+    // Limite les entrées du CVC à 3 chiffres
+    document.getElementById("cvc").addEventListener("input", function (event) {
+        event.target.value = event.target.value.replace(/\D/g, "").slice(0, 3); // Accepte uniquement les chiffres et limite à 3 caractères
+    });
+
+    // Validation de tous les champs lors du clic sur "Soumettre"
+    document.querySelector(".btn-submit").addEventListener("click", function (event) {
+        event.preventDefault(); // Empêche le rechargement de la page
+
+        const requiredFields = document.querySelectorAll("input[required], select[required]");
+        let isValid = true; // Variable pour suivre l'état de validation
+
+        requiredFields.forEach(field => {
+            field.style.border = "1px solid #ddd"; // Réinitialise la bordure
+
+            // Vérifie si le champ est vide
+            if (!field.value.trim()) {
+                isValid = false;
+                field.style.border = "2px solid red";
+            }
+
+            // Validation supplémentaire pour le numéro de carte
+            if (field.id === "card-number" && field.value.trim().length !== 16) {
+                isValid = false;
+                field.style.border = "2px solid red";
+                alert("Le numéro de carte doit contenir exactement 16 chiffres.");
+            }
+
+            // Validation supplémentaire pour le CVC
+            if (field.id === "cvc" && field.value.trim().length !== 3) {
+                isValid = false;
+                field.style.border = "2px solid red";
+                alert("Le CVC doit contenir exactement 3 chiffres.");
+            }
+
+            // Validation et formatage de la date d'expiration
+            if (field.id === "expiry") {
+                const expiryValue = field.value.trim();
+                const expiryRegex = /^(0[1-9]|1[0-2])\/\d{2}$/; // Format MM/AA
+
+                if (!expiryRegex.test(expiryValue)) {
+                    isValid = false;
+                    field.style.border = "2px solid red";
+                    alert("La date d'expiration doit être au format MM/AA.");
+                } else {
+                    // Vérifie si la date est dans le futur
+                    const [month, year] = expiryValue.split("/").map(Number);
+                    const currentDate = new Date();
+                    const currentYear = currentDate.getFullYear() % 100; // Récupère les deux derniers chiffres de l'année
+                    const currentMonth = currentDate.getMonth() + 1;
+
+                    if (year < currentYear || (year === currentYear && month < currentMonth)) {
+                        isValid = false;
+                        field.style.border = "2px solid red";
+                        alert("La date d'expiration doit être dans le futur.");
+                    }
+                }
+            }
+        });
+
+        // Affiche un message de confirmation si tout est valide
+        if (isValid) {
+            const existingMessage = document.querySelector(".confirmation-message");
+            if (!existingMessage) {
+                const confirmationMessage = document.createElement("div");
+                confirmationMessage.textContent = "Votre paiement a bien été effectué. Vous recevrez votre billet à l'adresse email renseignée. Bon voyage !";
+                confirmationMessage.className = "confirmation-message";
+                confirmationMessage.style.backgroundColor = "#0f2454";
+                confirmationMessage.style.color = "#fff";
+                confirmationMessage.style.padding = "10px";
+                confirmationMessage.style.borderRadius = "5px";
+                confirmationMessage.style.textAlign = "center";
+                confirmationMessage.style.marginTop = "20px";
+                confirmationMessage.style.fontSize = "16px";
+
+                const submitButton = document.querySelector(".btn-submit");
+                submitButton.parentNode.insertBefore(confirmationMessage, submitButton.nextSibling);
+
+                // Efface le formulaire après validation
+                requiredFields.forEach(field => field.value = "");
+            }
+        }
+    });
+});
+
+</script>
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

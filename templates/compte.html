@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <link rel="shortcut icon" href="../static/img/travel/icone travel.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/compte.css">
+    
+    <title>Travel</title>
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fenetre">
+          <a href="/travel"><span class="fermer"> <ion-icon name="close"></ion-icon></span></a> 
+        <div class="forme">
+            <h2>Connectez-vous</h2>
+            <form id="loginForm" method="post">
+                <div class="saisie">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input id="email" name="email" type="email" required>
+                    <label>Email</label>
+                    <p id="emailError" class="error-message">Veuillez remplir le champ email.</p>
+                </div> 
+              <div class="saisie">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input id="password" name="mot de passe" type="password" required>
+                <label>Mot De Passe</label>
+                <p id="passwordError" class="error-message">Veuillez remplir le champ mot de passe.</p>
+              </div>  
+              
+                <button type="submit" class="btn">Connecter</button>
+            
+              <button type="button" class="btn" onclick="window.location.href='/inscription'">Créer un compte</button>
+           </form>
+        </div>
+        
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <script>
+        const form = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+
+        form.addEventListener('submit', (e) => {
+            let valid = true;
+
+            // Vérification du champ email
+            if (emailInput.value.trim() === '') {
+                emailError.style.display = 'block';
+                valid = false;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            // Vérification du champ mot de passe
+            if (passwordInput.value.trim() === '') {
+                passwordError.style.display = 'block';
+                valid = false;
+            } else {
+                passwordError.style.display = 'none';
+            }
+
+            // Si un champ est vide, empêcher l'envoi du formulaire
+            if (!valid) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

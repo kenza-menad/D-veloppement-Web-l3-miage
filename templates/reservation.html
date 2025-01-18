@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche et Réservation de Voyage</title>
+    <link rel="shortcut icon" href="../static/img/travel/icone travel.png">
+    <style>
+       /* Styles Généraux */
+       body {
+    font-family: "Ubuntu", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; 
+    background-image: url(../static/img/travel/reservation\ arriere.jpg); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position:auto ;
+    
+    
+}
+
+        .container {
+    
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Ajustez la hauteur selon vos besoins */
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.5); /* Fond semi-transparent */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px); /* Applique un flou à l'arrière-plan */
+    /* Vous pouvez ajuster l'intensité du flou */
+}
+
+        /* Logo */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0f2454;
+            margin: 20px 0;
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        /* Recherche de Vol */
+        .search-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: transparent;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 60px;
+            margin-bottom: 270px;
+            margin-right: 20px;
+            backdrop-filter: blur(15px);
+            z-index: 1;
+            
+
+        }
+
+        .search-fields,
+        .date-fields {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input,
+        .date-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .date-input {
+            width: 150px;
+        }
+
+        .swap-icon {
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .menu-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu-button {
+            width: 80%;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 150px;
+            text-align: left;
+        }
+
+        .menu-content.active {
+            display: block;
+            width: 180%
+        }
+
+        .menu-content label {
+            display: block;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-content label:hover {
+            background-color: #f0f0f0;
+        }
+
+        .traveler-class {
+            position: relative;
+            background-color: transparent;
+        }
+
+
+        #traveler-button {
+            padding: 10px;
+            font-size: 14px;
+            width: 90%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 180px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .traveler-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .search-btn {
+            background: #2095ae;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.5s ease-in;
+        }
+    
+
+/* Section du formulaire */
+
+
+
+.form-section {
+    padding-top: 200px;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.7); /* Arrière-plan semi-transparent */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 19px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 27%;
+    backdrop-filter: blur(7px); /* Applique un flou à l'arrière-plan */
+    position: relative;
+    border: 2px solid transparent;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent; /* Si vous voulez garder un fond transparent derrière */
+    z-index: 1; /* Assurez-vous que l'élément soit au-dessus de l'arrière-plan flouté */
+    margin-top:300px;
+
+}
+
+form-section2
+
+{
+    padding-top: 200px;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.7); /* Arrière-plan semi-transparent */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 19px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 27%;
+    backdrop-filter: blur(7px); /* Applique un flou à l'arrière-plan */
+    position: relative;
+    border: 2px solid transparent;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent; 
+    z-index: 1; 
+  
+
+}
+
+/* Correction de la déclaration de .form-section2 */
+.form-section2 {
+    padding-top: 200px;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.7); /* Arrière-plan semi-transparent */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 19px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 27%;
+    backdrop-filter: blur(7px); /* Applique un flou à l'arrière-plan */
+    position: relative;
+    border: 2px solid transparent;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent; /* Si tu veux garder un fond transparent derrière */
+    z-index: 1; /* Assurez-vous que l'élément soit au-dessus de l'arrière-plan flouté */
+}
+
+.form-section2 h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Autres styles (inchangés) */
+.form-group {
+    margin-bottom: 15px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.form-group label {
+    margin-right: 15px;
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 30%;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: block;
+}
+
+.form-group input[type="radio"] {
+    width: auto;
+}
+
+.form-group .radio-label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.submit-btn {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 45%;
+}
+
+.submit-btn:hover {
+    background-color:  #0f2454;
+    transition: 0.5s ease-in;
+}
+
+    </style>
+</head>
+<body>
+ 
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">Travel</div>
+
+        <!-- Recherche de Vol -->
+        <div class="search-container">
+            <!-- Menu Aller-Retour -->
+            <div class="menu-container">
+                <!-- Bouton principal -->
+                <button class="menu-button" onclick="toggleMenu('trip-menu')">Aller-retour</button>
+
+                <!-- Menu déroulant -->
+                <div id="trip-menu" class="menu-content">
+                    <label><input type="radio" name="trip" value="aller-simple" onclick="updateMenu('Aller simple')"> Aller simple</label>
+                    <br>
+                    <label><input type="radio" name="trip" value="aller-retour" onclick="updateMenu('Aller-retour')" checked> Aller-retour</label>
+                </div>
+            </div>
+            <br>
+
+            <!-- Menu Bagages -->
+            <div class="menu-container">
+                <button class="menu-button" onclick="toggleMenu('baggage-menu')">Aucun bagage</button>
+                <div id="baggage-menu" class="menu-content">
+                    <div class="baggage-options">
+                        <span>Bagages à main</span>
+                        <button class="btn" onclick="decrease('carry-on')">-</button>
+                        <span id="carry-on">0</span>
+                        <button class="btn" onclick="increase('carry-on')">+</button>
+                    </div>
+                    <div class="baggage-options">
+                        <span>Bagages en soute</span>
+                        <button class="btn" onclick="decrease('checked-bag')">-</button>
+                        <span id="checked-bag">0</span>
+                        <button class="btn" onclick="increase('checked-bag')">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Champs De et À -->
+            <div class="search-fields">
+                <input list="from-options" placeholder="De..." class="search-input">
+                <datalist id="from-options">
+                    <option value="Paris Orly (ORY)">
+                    <option value="Paris Charles de Gaulle (CDG)">
+                    <option value="Lyon Saint-Exupéry (LYS)">
+                    <option value="Marseille Provence (MRS)">
+                    <option value="Nice Côte d'Azur (NCE)">
+                    <option value="Toulouse Blagnac (TLS)">
+                    <option value="Bordeaux Mérignac (BOD)">
+                    <option value="Nantes Atlantique (NTE)">
+                </datalist>
+                <button class="swap-icon">↔</button>
+                <input list="to-options" placeholder="À..." class="search-input">
+                <datalist id="to-options">
+                    <option value="Genève (GVA)">
+                    <option value="Zurich (ZRH)">
+                    <option value="Bâle (BSL)">
+                    <option value="Bangkok (BKK)">
+                    <option value="Phuket (HKT)">
+                    <option value="Chiang Mai (CNX)">
+                    <option value="Malé (MLE)">
+                    <option value="Madrid (MAD)">
+                </datalist>
+            </div>
+
+            <!-- Dates -->
+            <div class="date-fields">
+                <input type="date" id="departure-date" class="date-input">
+                <span> - </span>
+                <input type="date" id="return-date" class="date-input">
+            </div>
+
+            <!-- Voyageurs -->
+     <!-- Sélecteur de voyageurs -->
+    <div class="traveler-class">
+    <button id="traveler-button" onclick="toggleDropdown()">1 adulte, Économique</button>
+    <div id="dropdown" class="dropdown hidden">
+        <h4>Voyageur·euses</h4>
+        <div class="traveler-options">
+            <label>Adultes 18 ans et +</label>
+            <button class="btn" onclick="decrease('adults')">-</button>
+            <span id="adults">1</span>
+            <button class="btn" onclick="increase('adults')">+</button>
+        </div>
+        <div class="traveler-options">
+            <label>Étudiant·es > 18 ans</label>
+            <button class="btn" onclick="decrease('students')">-</button>
+            <span id="students">0</span>
+            <button class="btn" onclick="increase('students')">+</button>
+        </div>
+        <div class="traveler-options">
+            <label>Ados 12-17 ans</label>
+            <button class="btn" onclick="decrease('teens')">-</button>
+            <span id="teens">0</span>
+            <button class="btn" onclick="increase('teens')">+</button>
+        </div>
+        <div class="traveler-options">
+            <label>Enfants 2-11 ans</label>
+            <button class="btn" onclick="decrease('children')">-</button>
+            <span id="children">0</span>
+            <button class="btn" onclick="increase('children')">+</button>
+        </div>
+        <div class="traveler-options">
+            <label>Bébés sur siège 0-2 ans</label>
+            <button class="btn" onclick="decrease('infants_seat')">-</button>
+            <span id="infants_seat">0</span>
+            <button class="btn" onclick="increase('infants_seat')">+</button>
+        </div>
+        <div class="traveler-options">
+            <label>Bébés sur genoux 0-2 ans</label>
+            <button class="btn" onclick="decrease('infants_lap')">-</button>
+            <span id="infants_lap">0</span>
+            <button class="btn" onclick="increase('infants_lap')">+</button>
+        </div>
+        <h4>Classe</h4>
+        <select>
+            <option>Économique</option>
+            <option>Premium Économique</option>
+            <option>Affaires</option>
+            <option>Première</option>
+        </select>
+    </div>
+</div>
+
+            <!-- Bouton Rechercher -->
+            <button class="search-btn">🔍</button>
+        </div>
+    </div>
+
+        <!-- Informations Personnelles -->
+        <div class="form-section">
+            <h2>Vos informations personnelles</h2>
+            <div class="form-group">
+                <label class="radio-label"><input type="radio" name="title" value="mr"> M</label>
+                <label class="radio-label"><input type="radio" name="title" value="mrs"> Mme</label>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Nom</label>
+                <input type="text" id="last-name" name="last-name">
+            </div>
+            <div class="form-group">
+                <label for="first-name">Prénom</label>
+                <input type="text" id="first-name" name="first-name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="country">Pays de résidence</label>
+                <select id="country" name="country">
+                    <option value="france">France</option>
+                    <option value="uk">Royaume-Uni</option>
+                    <option value="usa">États-Unis</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="postal-code">Code postal</label>
+                <input type="text" id="postal-code" name="postal-code">
+            </div>
+        </div>
+        <div class="form-section2">
+            <h2>Souhaitez-vous un entretien avec l'un de nos conseillers spécialistes ? (optionnel)</h2>
+            <div class="form-group">
+                <label for="appointment-type">Type de rendez-vous</label>
+                <select id="appointment-type" name="appointment-type">
+                    <option value="phone">Téléphone</option>
+                    <option value="video">Vidéo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="appointment-date">Date</label>
+                <input type="date" id="appointment-date" name="appointment-date">
+            </div>
+            <div class="form-group">
+                <label for="appointment-time">Heure</label>
+                <input type="time" id="appointment-time" name="appointment-time">
+            </div>
+        </div>
+        <a href="/paiement" class="submit-btn"> Réserver</a>
+    </div>
+    <script>
+        function toggleMenu(menuId) {
+    const menu = document.getElementById(menuId);
+    menu.classList.toggle("active");
+}
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById("dropdown");
+            dropdown.classList.toggle("hidden");
+        }
+
+        function updateMenu(selection) {
+            const button = document.querySelector(".menu-button");
+            button.textContent = selection;
+            toggleMenu('trip-menu'); // Ferme le menu après sélection
+        }
+
+        function increase(id) {
+            const span = document.getElementById(id);
+            let value = parseInt(span.textContent, 10);
+            span.textContent = value + 1;
+        }
+
+        function decrease(id) {
+            const span = document.getElementById(id);
+            let value = parseInt(span.textContent, 10);
+            if (value > 0) {
+                span.textContent = value - 1;
+            }
+        }
+
+        // Empêcher la sélection de dates passées
+        window.onload = function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('departure-date').setAttribute('min', today);
+            document.getElementById('return-date').setAttribute('min', today);
+        };
+    </script>
+
+</body>
+</html>

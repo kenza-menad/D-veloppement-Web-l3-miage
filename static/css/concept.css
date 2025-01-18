@@ -1,0 +1,401 @@
+@import url("https://fonts.googleapis.com/css2?family=poppins:wght@400;500;600&family=Ubuntu:wght@400;500;700&display=swap");
+* {
+    font-family: "Ubuntu", sans-serif;
+}
+a {
+    text-decoration: none;
+}
+
+.heading-normal-txt {
+    font-size: 1rem;
+    letter-spacing: 6px;
+    color:#2095ae;
+}
+
+.headings {
+    font-size: 3rem;
+    font-family: "ubuntu";
+    padding-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.headings span {
+    color: #2095ae;
+}
+
+.secondary-headings {
+    font-size: 2.5rem;
+    font-family: "ubuntu";
+    padding: 1rem 0;
+}
+
+.lead {
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: justify;
+}
+
+.primary-btn {
+    width: 50%;
+    outline: none;
+    background-color: #2095ae;
+    border: none;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+header {
+    padding: 1rem 0;
+    position: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    width: 100%;
+    height: 100;
+    transition: all 0.3s ease-in-out;
+}
+
+header.sticky {
+    background: #2095ae;
+}
+
+.logo img {
+    width: 10%;
+    object-fit: cover;
+    max-height: 900px;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 0.9rem;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 1.1rem;
+    font-family: "ubuntu";
+}
+
+nav ul li::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: white;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+
+nav ul li:hover::before {
+    opacity: 1;
+    width: 100%;
+}
+
+.btn {
+    font-size: 1.3rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* Partie Header */
+header {
+    padding: 0.3rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    width: 100%;
+    height: 70px;
+    background-color: #2095ae;
+    transition: all 0.3s ease-in-out;
+}
+
+header.sticky {
+    background: #2095ae;
+}
+
+.header-concept {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #005d80;
+    color: white;
+}
+
+
+
+.header-concept h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.header-concept h4 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* Centrer le bouton */
+.header-concept button {
+    background-color: #003f60;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.header-concept button:hover {
+    background-color: #002c46;
+}
+
+header1 {
+    text-align: center;
+    padding: 100px 20px;
+    color: black;
+}
+
+header1 h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 6rem;
+}
+
+header1 h4 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+header1 button {
+    background-color: #005d80;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+header1 button:hover {
+    background-color: #004a6f;
+}
+
+/* Main Section */
+.main {
+    padding: 50px 20px;
+}
+
+.main .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.main .card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.main .card .left {
+    flex: 1;
+}
+
+.main .card h1 {
+    font-size: 22px;
+    color: #004a6f;
+}
+
+.main .card p {
+    font-size: 16px;
+    color: #555;
+}
+
+.main .card .right {
+    flex: 0.4;
+}
+
+.main .card .right img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #004a6f;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+footer h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+footer .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+footer .service {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+footer .service h3 {
+    font-size: 20px;
+    color: #004a6f;
+    margin-bottom: 10px;
+}
+
+footer .service p {
+    font-size: 16px;
+    color: #555;
+}
+
+footer p#contact {
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .navbar ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    header .navbar ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .main .content {
+        grid-template-columns: 1fr;
+    }
+
+    .main .card {
+        flex-direction: column;
+    }
+
+    footer .services {
+        grid-template-columns: 1fr;
+    }
+}
+
+:root{
+    --primary-color: #2095ae;
+}
+
+
+
+    @media(max-width:900px){
+        .btn{
+            display: block;
+        }
+        nav ul{
+            flex-direction: column;
+            position: fixed;
+            width: 100%;
+            height: 400px ;
+            background: var(--primary-color);
+            top: -600px;
+            left: 0;
+            padding: 3rem 1rem;
+            transition: all 0.5s ease-in ;
+        }
+        nav ul li a{
+    
+            display: block;
+            margin: 15px;
+            color: #fff;
+            
+            font-size: 1.1rem;
+
+        }
+        /* .close-btn{ */
+            /* position: absolute; */
+            /* top: 0rem; */
+            /* right: 0; */
+            /* margin: 25px; */
+            /* cursor: pointer; */
+/*             */
+/*             */
+        /* } */
+        
+        
+        
+        .close-btn {
+            position: absolute;
+            top: 1.5rem;  /* Ajustez la position verticale pour la placer à la bonne hauteur */
+            right: 3rem;  /* Décalez un peu l'icône vers la gauche en ajustant cette valeur */
+            cursor: pointer;
+            font-size: 1.5rem;  /* Ajustez la taille de l'icône si nécessaire */
+            color: white;  /* Couleur de l'icône */
+        }
+        
+        
+        
+        
+    
+        nav ul.display{
+            top: 0;
+            transition: all 0.5s ease-in-out;
+        }
+        nav ul li::before{
+            top: 45px;
+            left: 15px;
+        }
+        nav ul li:hover::before{
+            width: 16%;
+        }}
+        @media(max-width: 1024px){
+            .container{
+                padding: 0 1rem;
+            }    }

@@ -1,0 +1,456 @@
+@import url("https://fonts.googleapis.com/css2?family=poppins:wght@400;500;600&family=Ubuntu:wght@400;500;700&display=swap");
+body {
+    background-image: url(../img/travel/reservation\ arriere.jpg);
+    background-size: cover;  /* L'image couvrira tout l'écran */
+    background-position: center;  /* Centre l'image */
+    background-repeat: no-repeat;  /* Empêche l'image de se répéter */
+    background-attachment: fixed;  /* L'image reste fixe lors du défilement */
+    font-family: "ubuntu" sans-serif;
+    margin: 0;  /* Enlève la marge par défaut */
+    height: 100vh;  /* Prend toute la hauteur de la fenêtre */
+}
+
+
+.container .fermer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background-color: black;
+    font-size: 32px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.container .fermer ion-icon {
+    color: white; /* Force la couleur blanche */
+    font-size: 32px; /* Taille explicite de l'icône */
+}
+
+.coloredLink
+{
+	color: rgb(110, 110, 214);
+	/* Couleur du texte du lien */
+	text-decoration: none;
+	/* Supprimer le soulignement par défaut du lien */
+}
+#logo
+{
+    border-radius: 150px;
+    border : black solid 2px;
+    margin-left: 45px;
+    transition : 1s;
+
+    
+}
+#logo:hover
+{
+    rotate: 359deg;
+    scale: 1.5;
+    
+}
+#logoo
+{
+    border-radius: 150px;
+    border : black solid 2px;
+    margin-left: 45px;
+    transition : 1s;
+	margin-top: 20px;
+
+    
+}
+#logoo:hover
+{
+    rotate: 359deg;
+    scale: 1.5;
+    
+}
+.p1{
+	border-radius: 15px;
+    border : black solid 1px;
+    width: 650px;
+    height: 40px;
+    /* background-color: rgba(174, 174, 174, 0.735); */
+    background-color: white;
+    text-align: center;
+    transition: 1.2s ease;
+    margin-top: 3px;
+    padding-top: 7px;
+
+}
+a{
+	text-decoration: none;
+	color : black;
+}
+.p2{
+    border-radius: 15px;
+    border : black solid 1px;
+    width: 650px;
+    height: 80px;
+    background-color: white;
+}
+.header 
+{
+    display: flex;
+    align-items : center;
+}
+.item
+{
+    float : left;
+    padding-left: 25px;
+    padding-right: 30px;
+    padding-top: 10px;;
+    padding-bottom: 10px;
+    list-style: none;
+    border-radius: 15px;
+    border : black solid 1px;
+    text-align: center;
+    background-color: aliceblue;
+	
+    margin-left: 5px;
+    cursor : pointer;
+	color: black;
+
+}
+@keyframes titro
+{
+    0%
+    {
+        translate: 0px;
+
+    }
+    50%
+    {
+        translate: 10px;
+    }
+    100%
+    {
+        translate: 0px;
+    }
+}
+
+.titre {
+    margin-left: 40px;
+    border: black solid 1px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: #2095ae;
+    padding-top: 10px;
+    width: 500px;
+    height: 80px;
+    font-size: 24px;
+    animation: titro 5s infinite;
+    display: flex;            /* Utilisation de Flexbox pour centrer le texte à l'intérieur du carré */
+    justify-content: center;  /* Centre horizontalement à l'intérieur de .titre */
+    align-items: center;      /* Centre verticalement à l'intérieur de .titre */
+}
+
+
+.menu
+{
+    float : left;
+    height: 40px;
+    width: auto;
+    padding-left: 1px;
+
+}
+.item:hover
+{
+    background-color: aquamarine;
+    transition: 0.5s ease;
+    scale : 1.05;
+}
+
+/* Pour changer la couleur lorsque le lien est survolé */
+.coloredLink:hover
+{
+	color: rgb(0, 217, 255);
+	
+	/* Nouvelle couleur lors du survol */
+}
+
+@keyframes dance
+{
+	0%
+	{
+		transform: translateX(-2px);
+	}
+
+	50%
+	{
+		transform: translateX(2px);
+	}
+
+	100%
+	{
+		transform: translateX(-2px);
+	}
+}
+
+.dancingText
+{
+	animation: dance 1s infinite;
+}
+
+.feedbackButton
+{
+	padding: 5px 5px;
+	margin: 5px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+#satisfiedButton
+{
+	background-color: white;
+	color: black;
+	padding : 20px;
+	border: 1px black solid;
+	width : 50%;
+	border-radius: 15px;
+	transition: 1.2s;
+	cursor: pointer;
+
+
+}
+
+#moderatelySatisfiedButton
+{
+	background-color:white;
+	padding : 20px;
+	border: 1px black solid;
+	width : 50%;
+	border-radius: 15px ;
+	transition: 1.2s;
+	cursor: pointer;
+
+
+}
+button
+{
+	cursor: pointer;
+	transition: 1.2s;
+}
+button:hover{
+	background-color:  #2095ae;
+}
+
+#notSatisfiedButton
+{
+	background-color: white;
+	color: black;
+	padding : 20px;
+	border: 1px black solid;
+	width : 50%;
+	border-radius: 15px ;
+	transition: 1.2s;
+	cursor: pointer;
+
+}
+#notSatisfiedButton:hover,#moderatelySatisfiedButton:hover,#satisfiedButton:hover{
+	background-color: azure;
+}
+
+/* Ajoutez des styles CSS au besoin */
+body
+{
+	
+	justify-content: left;
+	font-family: "Century Gothic" , Arial, Helvetica, sans-serif;
+
+}
+
+
+
+
+
+/* Ajoutez d'autres styles CSS au besoin */
+/* Styles pour les questions */
+.question h3
+{
+	color: black;
+	/* Couleur gris foncé */
+}
+
+/* Ajoutez d'autres styles CSS au besoin */
+.container
+{
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.question
+{
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.reponse
+{
+	display: none;
+}
+
+/* Ajoutez des styles CSS au besoin */
+.container
+{
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.question
+{
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.reponse
+{
+	display: none;
+}
+
+
+
+/* Ajoutez des styles CSS au besoin */
+input[type="text"],input[type="email"]
+{
+	width: 300px;
+	/* Largeur désirée */
+	/* Ajoutez d'autres styles CSS au besoin */
+}
+
+/* Autres styles CSS */
+.large-textarea
+{
+	width: 250px;
+	/* Largeur désirée */
+	height: 150px;
+	/* Hauteur désirée */
+	/* Ajoutez d'autres styles CSS au besoin */
+}
+
+.info-message
+{
+	cursor: help;
+	
+	/* Change le curseur au survol */
+}
+/* Styles pour le pied de page */
+
+
+.container {
+    background-color: transparent; /* Couleur de fond transparente (blanc avec opacité) */
+    border-radius: 15px; /* Coins arrondis */
+    padding: 20px; /* Espacement interne */
+    max-width: 800px; /* Largeur maximale du carré */
+    margin: 20px auto; /* Centrer le conteneur sur la page */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+	backdrop-filter: blur(10px);/* Ombre douce autour du carré */
+}
+
+h1, h2, h3 {
+    font-family: Arial, sans-serif; /* Choix de la police pour les titres */
+    color: #333; /* Couleur du texte */
+}
+
+.info-message {
+    color: #555; /* Couleur de l'étiquette */
+    font-size: 1rem;
+}
+
+.p1, .p2 {
+    border-radius: 10px;
+    border: 1px solid #ccc; /* Bordure grise claire */
+    width: 100%;
+    max-width: 600px; /* Largeur maximale */
+    padding: 10px;
+    margin-top: 10px;
+}
+
+textarea.p2 {
+    min-height: 120px; /* Hauteur minimale pour la zone de texte */
+}
+
+button.p1 {
+    background-color:  #2095ae; /* Couleur du bouton */
+    color: white; /* Texte en blanc */
+    border: none; /* Pas de bordure */
+    padding: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.p1:hover {
+    background-color:   #0f2454;
+    transition: 0.5s ease-in; /* Changer de couleur au survol */
+}
+
+.question {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.reponse {
+    display: none;
+    margin-left: 20px;
+}
+
+.reponse.show {
+    display: block;
+}
+
+.dancingText {
+    font-style: italic;
+    color: #282828;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Cibler le label pour la demande */
+#probleme label {
+    font-size: 16px; /* Taille de police */
+    color: #000; /* Couleur du texte (noir) */
+    font-weight: bold; /* Gras pour le label */
+    display: block; /* Afficher le label sur une nouvelle ligne */
+    margin-bottom: 5px; /* Un peu d'espace sous le label */
+}
+
+/* Cibler le champ textarea pour la demande */
+#probleme textarea {
+    width: 100%; /* Utiliser toute la largeur disponible */
+    padding: 10px; /* Ajouter de l'espace à l'intérieur */
+    margin-bottom: 15px; /* Un peu d'espace sous le champ */
+    border: 1px solid #ccc; /* Bordure légère */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 14px; /* Taille de police */
+    color: #333; /* Couleur du texte */
+    min-height: 120px; /* Hauteur minimale pour la zone de texte */
+}
+
+/* Lorsque l'utilisateur clique sur la zone de texte */
+
+.container .fermer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background-color: black;
+    font-size: 32px;
+    color: white; /* Couleur du texte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+

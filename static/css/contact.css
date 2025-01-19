@@ -136,7 +136,7 @@ a{
 
 .titre {
     margin-left: 40px;
-    border: black solid 1px;
+    
     border-radius: 30px;
     text-align: center;
     background-color: #2095ae;
@@ -144,7 +144,7 @@ a{
     width: 500px;
     height: 80px;
     font-size: 24px;
-    animation: titro 5s infinite;
+   
     display: flex;            /* Utilisation de Flexbox pour centrer le texte à l'intérieur du carré */
     justify-content: center;  /* Centre horizontalement à l'intérieur de .titre */
     align-items: center;      /* Centre verticalement à l'intérieur de .titre */
